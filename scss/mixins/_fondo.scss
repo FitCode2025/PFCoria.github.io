@@ -1,0 +1,28 @@
+// Mixin para fondo de imagen
+// Permite reemplazar el fondo con una imagen y configurar su comportamiento
+
+$ruta-imagen:url("/img/fondo.jpg");
+
+@mixin fondo-imagen($ruta-imagen) {
+background-image: url($ruta-imagen);
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+
+// Asegura que el contenedor tenga altura mínima para mostrar la imagen
+min-height: 100%;
+width: 100%;
+}
+
+// Variante con opciones personalizables
+@mixin fondo-imagen-personalizado(
+$ruta-imagen,
+$posicion: center center,
+$repetir: no-repeat,
+$tamano: cover
+) {
+background-image: url($ruta-imagen);
+background-position: $posicion;
+background-repeat: $repetir;
+background-size: $tamano;
+}
